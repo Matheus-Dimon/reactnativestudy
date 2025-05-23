@@ -1,24 +1,32 @@
-import { StyleSheet, Text, View } from "react-native"
+import { Alert, Button, StyleSheet, Text, View } from "react-native"
 
 
 export default function Index(){
 
+    function handleMessage() {
+        Alert.alert("Ola")
+    }
     return (
-        <View>
-             <Text style={ styles.title }>
-                Hello  World
-            </Text>
-        </View>
+        <View style={styles.container}>
 
+            <Text style={styles.title}>Hello  World</Text>
+            <Button title="Enviar" onPress={handleMessage}/>
+
+        </View>
     )
 }
 
 const styles = StyleSheet.create({
 
+    container: {
+        flex:  1,
+        padding: 32,
+        justifyContent: "center" ,
+    },
     title:{
-    color: "red" ,  
-    fontSize: 24 ,
-    fontWeight:"bold" ,
+        color: "red" ,  
+        fontSize: 24 ,
+        fontWeight: "bold" ,
 
     },
 
