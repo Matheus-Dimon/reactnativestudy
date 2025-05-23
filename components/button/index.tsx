@@ -1,9 +1,10 @@
-import { TouchableOpacity } from "react-native"
+import { Text, TouchableOpacity } from "react-native"
+import { styles } from "./styles"
 
 export function Button() {
     return (
-        <TouchableOpacity>
-            <text>Clique aqui</text>
+        <TouchableOpacity style={styles.Button}>
+            <Text style={styles.title}> Clique aqui </Text>
         </TouchableOpacity>
     )
 }
