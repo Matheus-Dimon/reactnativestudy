@@ -1,30 +1,32 @@
 import { Button } from "@/components/button"
 import { Input } from "@/components/input"
+import { router } from "expo-router"
 import { useState } from "react"
-import { Alert, StyleSheet, Text, View } from "react-native"
+import { StyleSheet, Text, View } from "react-native"
 type Props = {
     title: string
 }
 
 export default function Index() {
-    const [name, setName] = useState<string> ()
-
+    const [name, setName] = useState ("")
     function onChangeText(text: string){
         console.log(text)
         setName(text)
     }
 
-    function handleMessage() {
-        const name = "Rodrigo"
-        Alert.alert('Ola, ${name}')
+    function handleNext() {
+        router.navigate("/dashboard")
     }
+
     return (
         <View style={styles.container}>
             <Input onChangeText={setName}/>
             <Text style={styles.title}>
                 Bem vindo
             </Text>
-            <Button title = "continuar"/>
+            <Button title = "continuar" 
+                    onPress={handleNext}
+                    activeOpacity={0.3}/>
         </View>
     )
 }
