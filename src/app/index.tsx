@@ -1,24 +1,30 @@
 import { Button } from "@/components/button"
 import { Input } from "@/components/input"
+import { useState } from "react"
 import { Alert, StyleSheet, Text, View } from "react-native"
 type Props = {
     title: string
 }
 
-export default function Index(){
+export default function Index() {
+    const [name, setName] = useState<string> ()
+
+    function onChangeText(text: string){
+        console.log(text)
+        setName(text)
+    }
+
     function handleMessage() {
         const name = "Rodrigo"
         Alert.alert('Ola, ${name}')
     }
     return (
         <View style={styles.container}>
-            <Input onChangeText={(text) => console.log(text)}/>
+            <Input onChangeText={setName}/>
             <Text style={styles.title}>
-                Hello  World
+                Bem vindo
             </Text>
-            <Button title = "entrar"/>
-            <Button title = "sair"/>
-            <Button title = {""}/>
+            <Button title = "continuar"/>
         </View>
     )
 }
