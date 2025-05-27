@@ -1,6 +1,10 @@
 import { Button } from "@/components/button"
 import { Alert, StyleSheet, Text, View } from "react-native"
 
+type Props = {
+    title: string
+}
+
 
 
 export default function Index(){
@@ -11,7 +15,9 @@ export default function Index(){
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Hello  World</Text>
-            <Button/>
+            <Button title = "entrar"/>
+            <Button title = "sair"/>
+            <Button title ={""}/>
         </View>
     )
 }
