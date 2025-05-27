@@ -14,10 +14,12 @@ export default function Index(){
     }
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Hello  World</Text>
+            <Text style={styles.title}>
+                Hello  World
+            </Text>
             <Button title = "entrar"/>
             <Button title = "sair"/>
-            <Button title ={""}/>
+            <Button title = {""}/>
         </View>
     )
 }
